@@ -31,7 +31,7 @@ public class Game extends JPanel implements ActionListener {
 	}
 	private void initPanel(){
 		addKeyListener(new TAdapter());
-		setBackground(Color.green);
+		setBackground(Color.black);
 		setFocusable(true);
 		
 		sprite = new Sprite();
@@ -61,7 +61,8 @@ public class Game extends JPanel implements ActionListener {
 	}
 	private void step() {
 		sprite.move();
-		repaint(sprite.getX()-1, sprite.getY()-1, sprite.getWidth()+2, sprite.getHeight()+2);
+		repaint();
+		//repaint(sprite.getX()-1, sprite.getY()-1, sprite.getWidth()+2, sprite.getHeight()+2);
 	}
 	private class TAdapter extends KeyAdapter{
 		@Override

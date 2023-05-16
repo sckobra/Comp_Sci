@@ -8,8 +8,12 @@ public class Sprite {
 
 	private int dx;
 	private int dy;
-	private int x = 40;
-	private int y = 60;
+	
+	//set beginning pos at bottom left corner
+	
+	private int x = 8;
+	private int y = 644;
+	
 	private int width;
 	private int height;
 	private Image image;
@@ -20,7 +24,7 @@ public class Sprite {
 	}
 	
 	private void loadImage() {
-		ImageIcon icon = new ImageIcon("image_src/player1.png");
+		ImageIcon icon = new ImageIcon("image_src/circle_sprite.png");
 		image = icon.getImage();
 		width = image.getWidth(null);
 		height = image.getHeight(null);
@@ -49,8 +53,8 @@ public class Sprite {
 	
 	public void keyPressed(KeyEvent e) {
 		System.out.println("key pressed");
-		System.out.println(getWidth());
-		System.out.println(getHeight());
+		System.out.println("x val: " + getX());
+		System.out.println("y val: " + getY());
 		
 		int key = e.getKeyCode();
 		if (key == KeyEvent.VK_LEFT) {
@@ -64,6 +68,9 @@ public class Sprite {
 		}
 		if (key == KeyEvent.VK_DOWN) {
 			dy = 2;
+		}
+		if (key == KeyEvent.VK_SPACE) {
+			dy = 0;
 		}
 	}
 	
@@ -81,6 +88,9 @@ public class Sprite {
 			dy = 0;
 		}
 		if (key == KeyEvent.VK_DOWN) {
+			dy = 0;
+		}
+		if (key == KeyEvent.VK_SPACE) {
 			dy = 0;
 		}
 		
