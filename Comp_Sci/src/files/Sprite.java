@@ -18,6 +18,7 @@ public class Sprite {
 	private int height;
 	private Image image;
 	
+	private int spriteSpeed = 2;
 	
 	public Sprite() {
 		loadImage();
@@ -58,19 +59,19 @@ public class Sprite {
 		
 		int key = e.getKeyCode();
 		if (key == KeyEvent.VK_LEFT) {
-			dx = -2;
+			dx = -spriteSpeed;
 		}
 		if (key == KeyEvent.VK_RIGHT) {
-			dx  = 2;
+			dx  = spriteSpeed;
 		}
 		if (key == KeyEvent.VK_UP) {
-			dy = -2;
+			dy = -spriteSpeed;
 		}
 		if (key == KeyEvent.VK_DOWN) {
-			dy = 2;
+			dy = spriteSpeed;
 		}
 		if (key == KeyEvent.VK_SPACE) {
-			dy = 0;
+			dy = -10;
 		}
 	}
 	
@@ -91,7 +92,8 @@ public class Sprite {
 			dy = 0;
 		}
 		if (key == KeyEvent.VK_SPACE) {
-			dy = 0;
+			dy = spriteSpeed;
+			//dy = 0;
 		}
 		
 	}
